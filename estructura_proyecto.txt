@@ -1,0 +1,113 @@
+.
+├── estructura_proyecto.txt
+├── next.config.js
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── postcss.config.mjs
+├── public
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── images
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── README.md
+├── src
+│   ├── app
+│   │   ├── dashboard
+│   │   │   └── page.tsx
+│   │   ├── drones
+│   │   │   └── page.tsx
+│   │   ├── favicon.ico
+│   │   ├── fonts
+│   │   │   ├── GeistMonoVF.woff
+│   │   │   └── GeistVF.woff
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── mapa
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   └── semillas
+│   │       └── page.tsx
+│   ├── components
+│   │   ├── dashboard
+│   │   │   └── StatsCard.tsx
+│   │   ├── drones
+│   │   │   ├── DroneCard.tsx
+│   │   │   ├── DroneControls.tsx
+│   │   │   ├── DroneList.tsx
+│   │   │   └── DroneStatus.tsx
+│   │   ├── layout
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Header.tsx
+│   │   │   └── LoadingSpinner.tsx
+│   │   ├── maps
+│   │   │   ├── MapControls.tsx
+│   │   │   ├── MapLegend.tsx
+│   │   │   ├── MapPreview.tsx
+│   │   │   ├── MapToolbar.tsx
+│   │   │   └── MapView.tsx
+│   │   ├── monitoring
+│   │   │   ├── DroneMetrics.tsx
+│   │   │   ├── OperationStatus.tsx
+│   │   │   └── WeatherInfo.tsx
+│   │   ├── operations
+│   │   │   ├── FlightPath.tsx
+│   │   │   ├── MissionPlanner.tsx
+│   │   │   └── SeedingControl.tsx
+│   │   ├── semillas
+│   │   │   ├── forms
+│   │   │   │   ├── SemillaForm.tsx
+│   │   │   │   └── StockForm.tsx
+│   │   │   ├── modals
+│   │   │   │   ├── SemillaModal.tsx
+│   │   │   │   └── StockModal.tsx
+│   │   │   ├── SemillaCard.tsx
+│   │   │   ├── SemillaHistory.tsx
+│   │   │   ├── SemillaList.tsx
+│   │   │   ├── SemillaReports.tsx
+│   │   │   └── SemillaStats.tsx
+│   │   └── ui
+│   │       ├── Alert.tsx
+│   │       ├── Badge.tsx
+│   │       ├── Button.tsx
+│   │       ├── Card.tsx
+│   │       ├── Dropdown.tsx
+│   │       ├── Input.tsx
+│   │       ├── LoadingSpinner.tsx
+│   │       ├── Modal.tsx
+│   │       ├── Select.tsx
+│   │       ├── Sidebar.tsx
+│   │       ├── Slider.tsx
+│   │       └── Tabs.tsx
+│   ├── lib
+│   │   ├── hooks
+│   │   │   ├── useDrones.ts
+│   │   │   ├── useMap.ts
+│   │   │   ├── useSemillas.ts
+│   │   │   └── useStock.ts
+│   │   ├── services
+│   │   │   ├── droneService.ts
+│   │   │   ├── mapService.ts
+│   │   │   ├── semillaService.ts
+│   │   │   └── stockService.ts
+│   │   ├── store
+│   │   │   └── store.ts
+│   │   ├── utils
+│   │   │   ├── dateUtils.ts
+│   │   │   └── mapUtils.ts
+│   │   └── utils.ts
+│   └── types
+│       ├── drones.ts
+│       ├── index.ts
+│       ├── map.ts
+│       ├── semillas.ts
+│       ├── stock.ts
+│       └── ui.ts
+├── tailwind.config.js
+├── tailwind.config.ts
+└── tsconfig.json
+
+26 directories, 84 files

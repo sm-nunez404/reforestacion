@@ -2,7 +2,10 @@
 
 import { Card } from '@/components/ui/Card'
 import { Cloud, Plane, Leaf, Map as MapIcon } from 'lucide-react'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs'
+import WeatherCard from '@/components/dashboard/WeatherCard'
+import ActivityChart from '@/components/dashboard/ActivityChart'
+import ActivityList from '@/components/dashboard/ActivityList'
+import OperationsSummary from '@/components/dashboard/OperationsSummary'
 
 export default function DashboardPage() {
   return (
@@ -59,16 +62,14 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <h2 className="text-lg font-semibold mb-4">Actividad Reciente</h2>
-          {/* Componente de actividad reciente aquí */}
-        </Card>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <ActivityChart />
+        <WeatherCard />
+      </div>
 
-        <Card className="p-6">
-          <h2 className="text-lg font-semibold mb-4">Estado del Clima</h2>
-          {/* Componente del clima aquí */}
-        </Card>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <ActivityList />
+        <OperationsSummary />
       </div>
     </div>
   )

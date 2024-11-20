@@ -1,76 +1,130 @@
 {
   "areas": [
     {
-      "id": "A001",
-      "nombre": "Parque Regional Lomas de Arena",
+      "id": "rob-001",
+      "nombre": "Parque Nacional Histórico Santa Cruz la Vieja",
+      "descripcion": "Área protegida afectada por incendios de 2019, en proceso de recuperación",
       "tipo": "en_proceso",
-      "poligono": [
-        {"lat": -17.8963, "lng": -63.1612},
-        {"lat": -17.8993, "lng": -63.1582},
-        {"lat": -17.9023, "lng": -63.1642},
-        {"lat": -17.8983, "lng": -63.1672}
-      ],
-      "superficie": 250,
-      "fechaInicio": "2024-01-15",
       "progreso": 65,
-      "semillasPlantadas": 25000,
-      "tipoTerreno": "arenoso",
-      "prioridad": "alta",
-      "condicionesOptimas": {
-        "temperatura": {"min": 20, "max": 35},
-        "humedad": {"min": 60, "max": 80}
-      }
+      "superficie": 175,
+      "semillasPlantadas": 28000,
+      "poligono": [
+        {"lat": -18.1234, "lng": -59.7651},
+        {"lat": -18.1334, "lng": -59.7551},
+        {"lat": -18.1434, "lng": -59.7651},
+        {"lat": -18.1334, "lng": -59.7751}
+      ],
+      "especies": ["tajibo", "cuchi", "curupaú", "cedro"],
+      "fechaInicio": "2022-03-15",
+      "ultimaActualizacion": "2024-03-20"
     },
     {
-      "id": "A002",
-      "nombre": "Jardín Botánico",
+      "id": "rob-002",
+      "nombre": "Reserva Municipal Valle de Tucabaca",
+      "descripcion": "Zona crítica afectada por incendios forestales del 2020",
       "tipo": "pendiente",
-      "poligono": [
-        {"lat": -17.7733, "lng": -63.1692},
-        {"lat": -17.7753, "lng": -63.1672},
-        {"lat": -17.7773, "lng": -63.1692},
-        {"lat": -17.7753, "lng": -63.1712}
-      ],
-      "superficie": 120,
-      "fechaInicio": null,
       "progreso": 0,
+      "superficie": 280,
       "semillasPlantadas": 0,
-      "tipoTerreno": "arcilloso",
-      "prioridad": "media",
-      "condicionesOptimas": {
-        "temperatura": {"min": 22, "max": 32},
-        "humedad": {"min": 65, "max": 85}
-      }
+      "poligono": [
+        {"lat": -18.2234, "lng": -59.7851},
+        {"lat": -18.2334, "lng": -59.7751},
+        {"lat": -18.2434, "lng": -59.7851},
+        {"lat": -18.2334, "lng": -59.7951}
+      ],
+      "especies": ["roble", "cedro", "tajibo"],
+      "fechaInicio": "2024-06-01",
+      "ultimaActualizacion": "2024-03-20"
     },
     {
-      "id": "A003",
-      "nombre": "Urubó",
+      "id": "rob-003",
+      "nombre": "Serranía de Santiago",
+      "descripcion": "Área completamente reforestada después de los incendios de 2019",
       "tipo": "completada",
-      "poligono": [
-        {"lat": -17.7563, "lng": -63.2012},
-        {"lat": -17.7593, "lng": -63.1982},
-        {"lat": -17.7623, "lng": -63.2012},
-        {"lat": -17.7593, "lng": -63.2042}
-      ],
-      "superficie": 180,
-      "fechaInicio": "2023-11-01",
-      "fechaFin": "2024-01-30",
       "progreso": 100,
+      "superficie": 150,
       "semillasPlantadas": 35000,
-      "tipoTerreno": "franco-arenoso",
-      "prioridad": "completada",
-      "condicionesOptimas": {
-        "temperatura": {"min": 21, "max": 33},
-        "humedad": {"min": 62, "max": 82}
-      }
+      "poligono": [
+        {"lat": -18.3234, "lng": -59.8051},
+        {"lat": -18.3334, "lng": -59.7951},
+        {"lat": -18.3434, "lng": -59.8051},
+        {"lat": -18.3334, "lng": -59.8151}
+      ],
+      "especies": ["tajibo", "cuchi", "curupaú", "tipa"],
+      "fechaInicio": "2021-05-10",
+      "ultimaActualizacion": "2023-12-15"
+    },
+    {
+      "id": "rob-004",
+      "nombre": "Bosque Seco Chiquitano Norte",
+      "descripcion": "Zona de recuperación prioritaria",
+      "tipo": "en_proceso",
+      "progreso": 45,
+      "superficie": 320,
+      "semillasPlantadas": 25000,
+      "poligono": [
+        {"lat": -18.1834, "lng": -59.7451},
+        {"lat": -18.1934, "lng": -59.7351},
+        {"lat": -18.2034, "lng": -59.7451},
+        {"lat": -18.1934, "lng": -59.7551}
+      ],
+      "especies": ["momoqui", "cedro", "jichituriqui"],
+      "fechaInicio": "2023-04-20",
+      "ultimaActualizacion": "2024-03-20"
+    },
+    {
+      "id": "rob-005",
+      "nombre": "Corredor Biológico San Miguel",
+      "descripcion": "Área de conexión entre reservas naturales",
+      "tipo": "en_proceso",
+      "progreso": 30,
+      "superficie": 200,
+      "semillasPlantadas": 15000,
+      "poligono": [
+        {"lat": -18.2534, "lng": -59.8251},
+        {"lat": -18.2634, "lng": -59.8151},
+        {"lat": -18.2734, "lng": -59.8251},
+        {"lat": -18.2634, "lng": -59.8351}
+      ],
+      "especies": ["tajibo", "cuchi", "almendra chiquitana"],
+      "fechaInicio": "2023-09-15",
+      "ultimaActualizacion": "2024-03-20"
+    },
+    {
+      "id": "rob-006",
+      "nombre": "Reserva Municipal Aguas Calientes",
+      "descripcion": "Zona de nacientes de agua y biodiversidad",
+      "tipo": "completada",
+      "progreso": 100,
+      "superficie": 180,
+      "semillasPlantadas": 40000,
+      "poligono": [
+        {"lat": -18.1634, "lng": -59.8451},
+        {"lat": -18.1734, "lng": -59.8351},
+        {"lat": -18.1834, "lng": -59.8451},
+        {"lat": -18.1734, "lng": -59.8551}
+      ],
+      "especies": ["cedro", "roble", "tajibo", "tipa"],
+      "fechaInicio": "2022-01-10",
+      "ultimaActualizacion": "2023-11-30"
+    },
+    {
+      "id": "rob-007",
+      "nombre": "Cerro San Miguel",
+      "descripcion": "Área de alta prioridad por su valor paisajístico",
+      "tipo": "pendiente",
+      "progreso": 5,
+      "superficie": 250,
+      "semillasPlantadas": 2000,
+      "poligono": [
+        {"lat": -18.2934, "lng": -59.8651},
+        {"lat": -18.3034, "lng": -59.8551},
+        {"lat": -18.3134, "lng": -59.8651},
+        {"lat": -18.3034, "lng": -59.8751}
+      ],
+      "especies": ["tajibo", "cuchi", "curupaú"],
+      "fechaInicio": "2024-02-01",
+      "ultimaActualizacion": "2024-03-20"
     }
-  ],
-  "stats": {
-    "totalAreas": 3,
-    "areaTotal": 550,
-    "areasCompletadas": 1,
-    "areasEnProceso": 1,
-    "areasPendientes": 1,
-    "totalSemillasPlantadas": 60000
-  }
+  ]
 }

@@ -48,13 +48,15 @@ export type MapLayerId = 'areas' | 'drones' | 'semillas';
 export interface DrawnArea {
   id: string;
   type: 'polygon' | 'rectangle' | 'circle';
-  coordinates: any; // Coordenadas según el tipo
+  coordinates: any;
   properties: {
     name: string;
     description?: string;
     status: 'pendiente' | 'en_proceso' | 'completada';
-    area: number; // en hectáreas
-    perimeter?: number; // en metros
+    area: number;
+    perimeter?: number;
+    progress: number;
+    seedsPlanted: number;
     createdAt: Date;
     updatedAt: Date;
   }

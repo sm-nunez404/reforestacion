@@ -1,0 +1,76 @@
+{
+  "areas": [
+    {
+      "id": "A001",
+      "nombre": "Parque Regional Lomas de Arena",
+      "tipo": "en_proceso",
+      "poligono": [
+        {"lat": -17.8963, "lng": -63.1612},
+        {"lat": -17.8993, "lng": -63.1582},
+        {"lat": -17.9023, "lng": -63.1642},
+        {"lat": -17.8983, "lng": -63.1672}
+      ],
+      "superficie": 250,
+      "fechaInicio": "2024-01-15",
+      "progreso": 65,
+      "semillasPlantadas": 25000,
+      "tipoTerreno": "arenoso",
+      "prioridad": "alta",
+      "condicionesOptimas": {
+        "temperatura": {"min": 20, "max": 35},
+        "humedad": {"min": 60, "max": 80}
+      }
+    },
+    {
+      "id": "A002",
+      "nombre": "Jardín Botánico",
+      "tipo": "pendiente",
+      "poligono": [
+        {"lat": -17.7733, "lng": -63.1692},
+        {"lat": -17.7753, "lng": -63.1672},
+        {"lat": -17.7773, "lng": -63.1692},
+        {"lat": -17.7753, "lng": -63.1712}
+      ],
+      "superficie": 120,
+      "fechaInicio": null,
+      "progreso": 0,
+      "semillasPlantadas": 0,
+      "tipoTerreno": "arcilloso",
+      "prioridad": "media",
+      "condicionesOptimas": {
+        "temperatura": {"min": 22, "max": 32},
+        "humedad": {"min": 65, "max": 85}
+      }
+    },
+    {
+      "id": "A003",
+      "nombre": "Urubó",
+      "tipo": "completada",
+      "poligono": [
+        {"lat": -17.7563, "lng": -63.2012},
+        {"lat": -17.7593, "lng": -63.1982},
+        {"lat": -17.7623, "lng": -63.2012},
+        {"lat": -17.7593, "lng": -63.2042}
+      ],
+      "superficie": 180,
+      "fechaInicio": "2023-11-01",
+      "fechaFin": "2024-01-30",
+      "progreso": 100,
+      "semillasPlantadas": 35000,
+      "tipoTerreno": "franco-arenoso",
+      "prioridad": "completada",
+      "condicionesOptimas": {
+        "temperatura": {"min": 21, "max": 33},
+        "humedad": {"min": 62, "max": 82}
+      }
+    }
+  ],
+  "stats": {
+    "totalAreas": 3,
+    "areaTotal": 550,
+    "areasCompletadas": 1,
+    "areasEnProceso": 1,
+    "areasPendientes": 1,
+    "totalSemillasPlantadas": 60000
+  }
+}

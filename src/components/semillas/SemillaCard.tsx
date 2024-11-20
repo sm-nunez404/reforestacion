@@ -1,28 +1,43 @@
 'use client'
 
 import { Semilla } from '@/types/semillas';
-import { Leaf, Thermometer, Clock, Droplets } from 'lucide-react';
+import { Leaf, Thermometer, Clock, Droplets, Tree, Shield, Sprout, Ruler } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 
 interface SemillaCardProps {
   semilla: Semilla;
   onEdit: (semilla: Semilla) => void;
+  onManageStock: (semilla: Semilla) => void;
 }
 
-export default function SemillaCard({ semilla, onEdit }: SemillaCardProps) {
+export default function SemillaCard({ semilla, onEdit, onManageStock }: SemillaCardProps) {
   const getStockStatus = (stock: number) => {
     if (stock > 1000) return 'bg-green-100 text-green-800';
     if (stock > 500) return 'bg-yellow-100 text-yellow-800';
     return 'bg-red-100 text-red-800';
   };
 
+  // Función auxiliar para formatear fechas
+  const formatDate = (dateString: string) => {
+    if (!dateString) return 'No especificada';
+    const date = new Date(dateString);
+    return date instanceof Date && !isNaN(date.getTime()) 
+      ? date.toLocaleDateString('es-ES', {
+          day: '2-digit',
+          month: '2-digit',
+          year: 'numeric'
+        })
+      : 'No especificada';
+  };
+
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all">
+    <div className="bg-white rounded-lg shadow-md p-6">
       <div className="flex justify-between items-start mb-4">
         <div>
-          <h3 className="font-semibold text-lg">{semilla.especie}</h3>
+          <h3 className="font-semibold text-lg">{semilla.nombre}</h3>
           <p className="text-sm text-gray-500">{semilla.nombreComun}</p>
+          <p className="text-xs text-gray-400">{semilla.especie}</p>
         </div>
         <Badge className={getStockStatus(semilla.stock)}>
           Stock: {semilla.stock}
@@ -53,31 +68,81 @@ export default function SemillaCard({ semilla, onEdit }: SemillaCardProps) {
         </div>
 
         <div className="flex items-center space-x-2">
-          <Leaf className="text-green-500 w-5 h-5" />
+          <Shield className="text-purple-500 w-5 h-5" />
           <div>
-            <p className="text-sm text-gray-500">Germinación</p>
-            <p className="font-medium">{semilla.tasaGerminacion}%</p>
+            <p className="text-sm text-gray-500">Resistencia</p>
+            <p className="font-medium">{semilla.resistenciaPlagasEnfermedades}</p>
           </div>
         </div>
 
         <div className="flex items-center space-x-2">
-          <Clock className="text-orange-500 w-5 h-5" />
+          <Sprout className="text-green-500 w-5 h-5" />
           <div>
-            <p className="text-sm text-gray-500">Tiempo</p>
-            <p className="font-medium">{semilla.tiempoGerminacion} días</p>
+            <p className="text-sm text-gray-500">Crecimiento</p>
+            <p className="font-medium">{semilla.velocidadCrecimiento}</p>
           </div>
         </div>
       </div>
 
-      <div className="mt-4">
-        <p className="text-sm text-gray-500 mb-2">Temporada de siembra:</p>
-        <div className="flex flex-wrap gap-2">
-          {semilla.temporadaSiembra.map((mes, index) => (
-            <Badge key={index} variant="outline">
-              {mes}
-            </Badge>
-          ))}
+      <div className="space-y-2 mt-4 border-t pt-4">
+        <div className="flex justify-between">
+          <span className="text-sm font-medium">Época de siembra:</span>
+          <span className="text-sm">
+            {semilla.temporadaSiembra.join(" - ")}
+          </span>
         </div>
+        
+        <div className="flex justify-between">
+          <span className="text-sm font-medium">Tasa de germinación:</span>
+          <span className="text-sm">{semilla.tasaGerminacion}%</span>
+        </div>
+
+        <div className="flex justify-between">
+          <span className="text-sm font-medium">Fecha recolección:</span>
+          <span className="text-sm">{formatDate(semilla.fechaCosecha)}</span>
+        </div>
+
+        <div className="flex justify-between">
+          <span className="text-sm font-medium">Vencimiento:</span>
+          <span className={`text-sm ${
+            new Date(semilla.fechaVencimiento) < new Date() ? 'text-red-500' : 'text-green-500'
+          }`}>
+            {formatDate(semilla.fechaVencimiento)}
+          </span>
+        </div>
+      </div>
+
+      <div className="border-t pt-4 mt-4">
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <p className="text-sm text-gray-500">Proveedor</p>
+            <p className="font-medium">{semilla.proveedor}</p>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500">Estado</p>
+            <p className="font-medium">{semilla.estadoConservacion}</p>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500">Riego</p>
+            <p className="font-medium">{semilla.requisitosRiego}</p>
+          </div>
+          <div>
+            <p className="text-sm text-gray-500">Altura Máx.</p>
+            <p className="font-medium">{semilla.alturaMaxima}m</p>
+          </div>
+        </div>
+
+        <div className="mt-4">
+          <p className="text-sm text-gray-500 mb-2">Compatibilidad:</p>
+          <p className="text-sm">{semilla.compatibilidadEcologica}</p>
+        </div>
+
+        {semilla.observacionesAdicionales && (
+          <div className="mt-4">
+            <p className="text-sm text-gray-500 mb-1">Observaciones:</p>
+            <p className="text-sm">{semilla.observacionesAdicionales}</p>
+          </div>
+        )}
       </div>
 
       <div className="flex space-x-2 mt-4">
@@ -91,6 +156,7 @@ export default function SemillaCard({ semilla, onEdit }: SemillaCardProps) {
         <Button 
           variant="primary" 
           className="flex-1"
+          onClick={() => onManageStock(semilla)}
         >
           Gestionar Stock
         </Button>

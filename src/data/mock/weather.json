@@ -1,0 +1,54 @@
+{
+  "current": {
+    "temperature": 28,
+    "humidity": 75,
+    "windSpeed": 15,
+    "precipitation": 30,
+    "conditions": "Parcialmente nublado",
+    "uvIndex": 8,
+    "visibility": 12,
+    "pressure": 1012,
+    "feelsLike": 30
+  },
+  "forecast": [
+    {
+      "date": "2024-02-20",
+      "temperature": {
+        "min": 22,
+        "max": 31
+      },
+      "precipitation": 40,
+      "conditions": "Lluvia dispersa",
+      "humidity": 80
+    },
+    {
+      "date": "2024-02-21",
+      "temperature": {
+        "min": 23,
+        "max": 32
+      },
+      "precipitation": 20,
+      "conditions": "Parcialmente nublado",
+      "humidity": 75
+    },
+    {
+      "date": "2024-02-22",
+      "temperature": {
+        "min": 24,
+        "max": 33
+      },
+      "precipitation": 10,
+      "conditions": "Soleado",
+      "humidity": 70
+    }
+  ],
+  "location": {
+    "name": "Santa Cruz de la Sierra",
+    "country": "Bolivia",
+    "coordinates": {
+      "lat": -17.7863,
+      "lng": -63.1812
+    },
+    "timezone": "America/La_Paz"
+  }
+}

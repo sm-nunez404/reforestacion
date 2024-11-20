@@ -13,25 +13,25 @@ import {
   Line,
   ResponsiveContainer
 } from 'recharts'
+import reportesData from '@/data/mock/reportes.json'
+import semillasData from '@/data/mock/semillas.json'
 
-const germinacionData = [
-  { nombre: 'Pino', tasa: 85 },
-  { nombre: 'Eucalipto', tasa: 78 },
-  { nombre: 'Roble', tasa: 92 },
-  { nombre: 'Cedro', tasa: 88 },
-  { nombre: 'Nogal', tasa: 75 },
-]
-
-const siembraMensual = [
-  { mes: 'Ene', cantidad: 1200 },
-  { mes: 'Feb', cantidad: 1500 },
-  { mes: 'Mar', cantidad: 2200 },
-  { mes: 'Abr', cantidad: 1800 },
-  { mes: 'May', cantidad: 2500 },
-  { mes: 'Jun', cantidad: 2100 },
-]
+const getRecomendacionColor = (tipo: string) => {
+  switch (tipo) {
+    case 'warning':
+      return 'bg-yellow-500';
+    case 'success':
+      return 'bg-green-500';
+    case 'error':
+      return 'bg-red-500';
+    default:
+      return 'bg-gray-500';
+  }
+};
 
 export default function SemillaReports() {
+  const stats = semillasData.stats;
+
   return (
     <div className="space-y-6">
       <h2 className="text-xl font-semibold mb-4">Reportes de Semillas</h2>
@@ -41,7 +41,7 @@ export default function SemillaReports() {
         <Card className="p-6">
           <h3 className="text-lg font-medium mb-4">Tasas de Germinación por Especie</h3>
           <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={germinacionData}>
+            <BarChart data={reportesData.germinacionData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="nombre" />
               <YAxis />
@@ -56,7 +56,7 @@ export default function SemillaReports() {
         <Card className="p-6">
           <h3 className="text-lg font-medium mb-4">Siembra Mensual</h3>
           <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={siembraMensual}>
+            <LineChart data={reportesData.siembraMensual}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="mes" />
               <YAxis />
@@ -78,19 +78,19 @@ export default function SemillaReports() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="text-sm text-gray-600">Total Especies</p>
-              <p className="text-2xl font-semibold">25</p>
+              <p className="text-2xl font-semibold">{stats.totalEspecies}</p>
             </div>
             <div>
               <p className="text-sm text-gray-600">Tasa Promedio</p>
-              <p className="text-2xl font-semibold">83.6%</p>
+              <p className="text-2xl font-semibold">{stats.tasaExitoPromedio}%</p>
             </div>
             <div>
               <p className="text-sm text-gray-600">Stock Total</p>
-              <p className="text-2xl font-semibold">15,000</p>
+              <p className="text-2xl font-semibold">{stats.totalSemillas.toLocaleString()}</p>
             </div>
             <div>
               <p className="text-sm text-gray-600">Especies en Riesgo</p>
-              <p className="text-2xl font-semibold text-red-600">3</p>
+              <p className="text-2xl font-semibold text-red-600">{stats.stockBajo}</p>
             </div>
           </div>
         </Card>
@@ -99,24 +99,16 @@ export default function SemillaReports() {
         <Card className="p-6">
           <h3 className="text-lg font-medium mb-4">Recomendaciones</h3>
           <ul className="space-y-3">
-            <li className="flex items-start">
-              <span className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-yellow-400 mr-2" />
-              <p className="text-sm text-gray-600">
-                El stock de Pino está por debajo del nivel recomendado. Considere aumentar la producción.
-              </p>
-            </li>
-            <li className="flex items-start">
-              <span className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-green-400 mr-2" />
-              <p className="text-sm text-gray-600">
-                La tasa de germinación del Roble muestra excelentes resultados. Mantener las condiciones actuales.
-              </p>
-            </li>
-            <li className="flex items-start">
-              <span className="flex-shrink-0 w-2 h-2 mt-2 rounded-full bg-red-400 mr-2" />
-              <p className="text-sm text-gray-600">
-                El Nogal requiere atención inmediata. La tasa de germinación ha disminuido un 15%.
-              </p>
-            </li>
+            {reportesData.recomendaciones.map((recomendacion, index) => (
+              <li key={index} className="flex items-start">
+                <span 
+                  className={`flex-shrink-0 w-2 h-2 mt-2 rounded-full ${getRecomendacionColor(recomendacion.tipo)} mr-2`}
+                />
+                <p className="text-sm text-gray-600">
+                  {recomendacion.mensaje}
+                </p>
+              </li>
+            ))}
           </ul>
         </Card>
       </div>

@@ -1,0 +1,33 @@
+{
+  "germinacionData": [
+    { "nombre": "Tajibo Rosado", "tasa": 85 },
+    { "nombre": "Cupesí", "tasa": 78 },
+    { "nombre": "Toborochi", "tasa": 82 },
+    { "nombre": "Soto", "tasa": 80 }
+  ],
+  "siembraMensual": [
+    { "mes": "Ene", "cantidad": 1200 },
+    { "mes": "Feb", "cantidad": 1500 },
+    { "mes": "Mar", "cantidad": 2200 },
+    { "mes": "Abr", "cantidad": 1800 },
+    { "mes": "May", "cantidad": 2500 },
+    { "mes": "Jun", "cantidad": 2100 }
+  ],
+  "recomendaciones": [
+    {
+      "tipo": "warning",
+      "mensaje": "El stock de Cupesí está por debajo del nivel recomendado. Considere aumentar la producción.",
+      "color": "yellow"
+    },
+    {
+      "tipo": "success",
+      "mensaje": "La tasa de germinación del Tajibo Rosado muestra excelentes resultados. Mantener las condiciones actuales.",
+      "color": "green"
+    },
+    {
+      "tipo": "error",
+      "mensaje": "El Toborochi requiere atención inmediata. La tasa de germinación ha disminuido un 10%.",
+      "color": "red"
+    }
+  ]
+}

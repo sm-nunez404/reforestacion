@@ -1,0 +1,136 @@
+{
+  "semillas": [
+    {
+      "id": "S001",
+      "nombre": "Tajibo Rosado",
+      "especie": "Handroanthus impetiginosus",
+      "nombreComun": "Tajibo",
+      "stock": 5000,
+      "tasaGerminacion": 85,
+      "tiempoGerminacion": 15,
+      "profundidadSiembra": 0.5,
+      "espaciamiento": 4,
+      "temporadaSiembra": ["Octubre", "Noviembre", "Diciembre"],
+      "condicionesOptimas": {
+        "temperatura": {"min": 20, "max": 30},
+        "humedad": {"min": 60, "max": 80},
+        "tipoSuelo": ["Franco arenoso", "Franco arcilloso"]
+      },
+      "origen": "Local",
+      "usos": ["Ornamental", "Reforestación"],
+      "fechaCosecha": "2024-09-15",
+      "fechaVencimiento": "2025-09-15",
+      "imagenes": {
+        "semilla": "/images/semillas/tajibo-semilla.jpg",
+        "planta": "/images/semillas/tajibo-planta.jpg"
+      },
+      "proveedor": "Vivero Santa Cruz",
+      "estadoConservacion": "Frescas",
+      "metodoAlmacenamiento": "Ambiente controlado",
+      "resistenciaPlagasEnfermedades": "Alta",
+      "requisitosRiego": "Moderado",
+      "velocidadCrecimiento": "Rápido",
+      "alturaMaxima": 15,
+      "compatibilidadEcologica": "Buena con especies nativas",
+      "observacionesAdicionales": "Atrae polinizadores"
+    },
+    {
+      "id": "S002",
+      "nombre": "Cupesí",
+      "especie": "Prosopis chilensis",
+      "nombreComun": "Algarrobo",
+      "stock": 3500,
+      "tasaGerminacion": 78,
+      "tiempoGerminacion": 20,
+      "profundidadSiembra": 1,
+      "espaciamiento": 5,
+      "temporadaSiembra": ["Septiembre", "Octubre", "Noviembre"],
+      "condicionesOptimas": {
+        "temperatura": {"min": 22, "max": 32},
+        "humedad": {"min": 55, "max": 75},
+        "tipoSuelo": ["Arenoso", "Franco arenoso"]
+      },
+      "origen": "Local",
+      "usos": ["Reforestación", "Alimentación"],
+      "fechaCosecha": "2024-08-20",
+      "fechaVencimiento": "2025-08-20",
+      "imagenes": {
+        "semilla": "/images/semillas/cupesi-semilla.jpg",
+        "planta": "/images/semillas/cupesi-planta.jpg"
+      },
+      "proveedor": "Cooperativa Agroforestal",
+      "estadoConservacion": "Almacenadas",
+      "metodoAlmacenamiento": "Refrigeración",
+      "resistenciaPlagasEnfermedades": "Media",
+      "requisitosRiego": "Bajo",
+      "velocidadCrecimiento": "Lento",
+      "alturaMaxima": 10,
+      "compatibilidadEcologica": "Fijadora de nitrógeno",
+      "observacionesAdicionales": "Madera de alta densidad"
+    },
+    {
+      "id": "S003",
+      "nombre": "Toborochi",
+      "especie": "Ceiba speciosa",
+      "nombreComun": "Palo borracho",
+      "stock": 2800,
+      "tasaGerminacion": 82,
+      "tiempoGerminacion": 18,
+      "profundidadSiembra": 1,
+      "espaciamiento": 6,
+      "temporadaSiembra": ["Octubre", "Noviembre"],
+      "condicionesOptimas": {
+        "temperatura": {"min": 21, "max": 31},
+        "humedad": {"min": 58, "max": 78},
+        "tipoSuelo": ["Franco", "Franco arenoso"]
+      },
+      "origen": "Local",
+      "usos": ["Ornamental", "Reforestación"],
+      "fechaCosecha": "2024-09-10",
+      "proveedor": "Asociación de Silvicultores",
+      "estadoConservacion": "Tratadas",
+      "metodoAlmacenamiento": "Secado y refrigeración",
+      "resistenciaPlagasEnfermedades": "Baja",
+      "requisitosRiego": "Alto",
+      "velocidadCrecimiento": "Moderado",
+      "alturaMaxima": 18,
+      "compatibilidadEcologica": "Proporciona hábitat para aves",
+      "observacionesAdicionales": "Flores atractivas para fauna"
+    },
+    {
+      "id": "S004",
+      "nombre": "Soto",
+      "especie": "Schinopsis brasiliensis",
+      "nombreComun": "Soto",
+      "stock": 4000,
+      "tasaGerminacion": 80,
+      "tiempoGerminacion": 25,
+      "profundidadSiembra": 1,
+      "espaciamiento": 4,
+      "temporadaSiembra": ["Agosto", "Septiembre", "Octubre"],
+      "condicionesOptimas": {
+        "temperatura": {"min": 22, "max": 35},
+        "humedad": {"min": 50, "max": 75},
+        "tipoSuelo": ["Franco arenoso", "Arcilloso"]
+      },
+      "origen": "Local",
+      "usos": ["Madera", "Reforestación"],
+      "fechaCosecha": "2024-07-30",
+      "proveedor": "Fundación Bosque Nativo",
+      "estadoConservacion": "Frescas",
+      "metodoAlmacenamiento": "Ambiente seco",
+      "resistenciaPlagasEnfermedades": "Alta",
+      "requisitosRiego": "Bajo",
+      "velocidadCrecimiento": "Lento",
+      "alturaMaxima": 20,
+      "compatibilidadEcologica": "Soporta suelos pobres",
+      "observacionesAdicionales": "Madera resistente a la intemperie"
+    }
+  ],
+  "stats": {
+    "totalEspecies": 4,
+    "totalSemillas": 15300,
+    "tasaExitoPromedio": 81.25,
+    "stockBajo": 0
+  }
+}

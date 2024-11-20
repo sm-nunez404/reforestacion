@@ -1,0 +1,61 @@
+{
+  "activities": [
+    {
+      "id": "ACT001",
+      "tipo": "drone",
+      "mensaje": "Drone DJI-001 completó misión de siembra en Lomas de Arena",
+      "tiempo": "2024-02-20T14:30:00Z",
+      "detalles": {
+        "droneId": "DJI-001",
+        "area": "Parque Regional Lomas de Arena",
+        "semillasPlantadas": 250,
+        "duracion": "2.5 horas"
+      }
+    },
+    {
+      "id": "ACT002",
+      "tipo": "siembra",
+      "mensaje": "500 semillas de Tajibo plantadas en Urubó",
+      "tiempo": "2024-02-20T14:00:00Z",
+      "detalles": {
+        "semillaId": "S001",
+        "area": "Urubó",
+        "cantidad": 500,
+        "droneId": "DJI-003"
+      }
+    },
+    {
+      "id": "ACT003",
+      "tipo": "mantenimiento",
+      "mensaje": "Drone DJI-002 enviado a mantenimiento por batería baja",
+      "tiempo": "2024-02-20T13:45:00Z",
+      "detalles": {
+        "droneId": "DJI-002",
+        "motivo": "Batería baja",
+        "nivelBateria": 20,
+        "ubicacion": "Jardín Botánico"
+      }
+    },
+    {
+      "id": "ACT004",
+      "tipo": "clima",
+      "mensaje": "Alerta de vientos fuertes en Lomas de Arena",
+      "tiempo": "2024-02-20T13:30:00Z",
+      "detalles": {
+        "velocidadViento": 35,
+        "area": "Parque Regional Lomas de Arena",
+        "duracionEstimada": "2 horas"
+      }
+    }
+  ],
+  "stats": {
+    "totalHoy": 4,
+    "porTipo": {
+      "drone": 1,
+      "siembra": 1,
+      "mantenimiento": 1,
+      "clima": 1
+    },
+    "semillasPlantadasHoy": 750
+  }
+}

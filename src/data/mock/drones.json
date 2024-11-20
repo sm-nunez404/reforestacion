@@ -1,0 +1,77 @@
+{
+  "drones": [
+    {
+      "id": "DJI-001",
+      "nombre": "Drone Reforestador 1",
+      "modelo": "DJI Agras T30",
+      "estado": "activo",
+      "bateria": 85,
+      "ubicacion": {
+        "lat": -17.7863,
+        "lng": -63.1812
+      },
+      "ultimaActualizacion": "2024-02-20T14:30:00Z",
+      "capacidadSemillas": 1000,
+      "semillasRestantes": 750,
+      "altitud": 100,
+      "velocidad": 25,
+      "areaAsignada": "Parque Regional Lomas de Arena",
+      "misionActual": {
+        "id": "M001",
+        "tipo": "siembra",
+        "progreso": 65,
+        "inicio": "2024-02-20T12:00:00Z"
+      }
+    },
+    {
+      "id": "DJI-002",
+      "nombre": "Drone Reforestador 2",
+      "modelo": "DJI Agras T30",
+      "estado": "en_mantenimiento",
+      "bateria": 20,
+      "ubicacion": {
+        "lat": -17.7960,
+        "lng": -63.1725
+      },
+      "ultimaActualizacion": "2024-02-20T14:15:00Z",
+      "capacidadSemillas": 1000,
+      "semillasRestantes": 150,
+      "altitud": 0,
+      "velocidad": 0,
+      "areaAsignada": "Jardín Botánico",
+      "misionActual": null
+    },
+    {
+      "id": "DJI-003",
+      "nombre": "Drone Reforestador 3",
+      "modelo": "DJI Agras T40",
+      "estado": "activo",
+      "bateria": 92,
+      "ubicacion": {
+        "lat": -17.7763,
+        "lng": -63.1912
+      },
+      "ultimaActualizacion": "2024-02-20T14:28:00Z",
+      "capacidadSemillas": 1200,
+      "semillasRestantes": 980,
+      "altitud": 120,
+      "velocidad": 28,
+      "areaAsignada": "Urubó",
+      "misionActual": {
+        "id": "M002",
+        "tipo": "reconocimiento",
+        "progreso": 30,
+        "inicio": "2024-02-20T13:45:00Z"
+      }
+    }
+  ],
+  "stats": {
+    "total": 3,
+    "activos": 2,
+    "enMantenimiento": 1,
+    "inactivos": 0,
+    "semillasTotales": 1880,
+    "capacidadTotal": 3200,
+    "bateriaPromedio": 65.6
+  }
+}

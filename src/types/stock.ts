@@ -1,13 +1,11 @@
 export interface StockMovement {
   id: string;
   semillaId: string;
-  tipo: 'entrada' | 'salida' | 'ajuste' | 'perdida';
+  tipo: 'entrada' | 'salida' | 'perdida' | 'ajuste';
   cantidad: number;
-  fecha: Date;
   motivo: string;
+  fecha: string;
   usuario: string;
-  lote?: string;
-  proveedor?: string;
 }
 
 export interface StockSummary {

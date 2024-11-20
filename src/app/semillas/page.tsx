@@ -4,14 +4,10 @@ import SemillaList from '@/components/semillas/SemillaList';
 import SemillaStats from '@/components/semillas/SemillaStats';
 import SemillaReports from '@/components/semillas/SemillaReports';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/Tabs';
+import semillasData from '@/data/mock/semillas.json';
 
 export default function SemillasPage() {
-  const stats = {
-    totalEspecies: 25,
-    totalSemillas: 15000,
-    tasaExitoPromedio: 85,
-    stockBajo: 3
-  }
+  const stats = semillasData.stats;
 
   return (
     <div className="p-6">

@@ -1,12 +1,14 @@
 export interface Semilla {
   id: string;
-  nombre?: string;
+  nombre: string;
   especie: string;
   nombreComun: string;
   stock: number;
   tasaGerminacion: number;
   tiempoGerminacion: number;
   profundidadSiembra: number;
+  espaciamiento: number;
+  temporadaSiembra: string[];
   condicionesOptimas: {
     temperatura: {
       min: number;
@@ -18,9 +20,28 @@ export interface Semilla {
     };
     tipoSuelo: string[];
   };
-  espaciamiento: number;
-  temporadaSiembra: string[];
-  // Agrega aquí otras propiedades necesarias para las semillas
+  origen: string;
+  usos: string[];
+  fechaCosecha: string;
+  proveedor: string;
+  estadoConservacion: string;
+  metodoAlmacenamiento: string;
+  resistenciaPlagasEnfermedades: string;
+  requisitosRiego: string;
+  velocidadCrecimiento: string;
+  alturaMaxima: number;
+  compatibilidadEcologica: string;
+  observacionesAdicionales: string;
+  epocaSiembra: {
+    inicio: string;
+    fin: string;
+  };
+  fechaRecoleccion: string;
+  fechaVencimiento: string;
+  imagenes: {
+    semilla: string;
+    planta: string;
+  };
 }
 
 export interface SemillaStats {

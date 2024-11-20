@@ -6,3 +6,143 @@
   width: 100%;
   height: 100%;
 }
+
+/* Estilos para los iconos de drones */
+.drone-icon {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+}
+
+.drone-icon img {
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px;
+}
+
+/* Estilos base para los controles de dibujo */
+.leaflet-draw-toolbar {
+  margin-bottom: 20px !important;
+  margin-right: 10px !important;
+  background-color: white !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  padding: 4px !important;
+}
+
+/* Estilos para los botones de herramientas */
+.leaflet-draw-toolbar a {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 6px !important;
+  margin: 2px !important;
+  background-color: white !important;
+  border: 1px solid #e5e7eb !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-draw-toolbar a:hover {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+}
+
+/* Iconos específicos */
+.leaflet-draw-draw-polyline {
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%236B7280"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5" /></svg>') center/20px no-repeat !important;
+}
+
+.leaflet-draw-draw-polygon {
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%236B7280"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg>') center/20px no-repeat !important;
+}
+
+.leaflet-draw-draw-rectangle {
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%236B7280"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-7.5A2.25 2.25 0 018.25 18v-1.5m8.25-8.25h-6a2.25 2.25 0 00-2.25 2.25v6" /></svg>') center/20px no-repeat !important;
+}
+
+.leaflet-draw-draw-circle {
+  background: white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="%236B7280"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>') center/20px no-repeat !important;
+}
+
+/* Menú de acciones más compacto */
+.leaflet-draw-actions {
+  position: absolute !important;
+  right: 45px !important;
+  bottom: 0 !important;
+  background-color: white !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  padding: 4px !important;
+  min-width: 140px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Items del menú más compactos */
+.leaflet-draw-actions li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.leaflet-draw-actions li:not(:last-child) {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+/* Enlaces del menú más compactos */
+.leaflet-draw-actions a {
+  display: block !important;
+  padding: 6px 10px !important;
+  color: #374151 !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  transition: all 0.2s !important;
+  white-space: nowrap !important;
+}
+
+.leaflet-draw-actions a:hover {
+  background-color: #f3f4f6 !important;
+  color: #111827 !important;
+}
+
+/* Estilos específicos para acciones */
+.leaflet-draw-actions li:first-child a {
+  color: #2563eb !important;
+  font-weight: 500 !important;
+}
+
+.leaflet-draw-actions li:last-child a {
+  color: #dc2626 !important;
+}
+
+/* Tooltip de dibujo */
+.leaflet-draw-tooltip {
+  background: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+  border: none !important;
+  padding: 6px 12px !important;
+  border-radius: 6px !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.leaflet-draw-tooltip-single {
+  margin-top: -12px !important;
+}
+
+/* Ajustes de z-index */
+.leaflet-draw-toolbar {
+  z-index: 1500 !important;
+}
+
+.leaflet-draw-actions {
+  z-index: 1600 !important;
+}
+
+/* Estado activo de los botones */
+.leaflet-draw-toolbar .leaflet-draw-draw-polyline.leaflet-draw-toolbar-button-enabled,
+.leaflet-draw-toolbar .leaflet-draw-draw-polygon.leaflet-draw-toolbar-button-enabled,
+.leaflet-draw-toolbar .leaflet-draw-draw-rectangle.leaflet-draw-toolbar-button-enabled,
+.leaflet-draw-toolbar .leaflet-draw-draw-circle.leaflet-draw-toolbar-button-enabled {
+  background-color: #e5e7eb !important;
+  border-color: #d1d5db !important;
+}

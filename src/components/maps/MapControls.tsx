@@ -21,7 +21,7 @@ export default function MapControls({ onLayerToggle }: MapControlsProps) {
   };
 
   return (
-    <div className="absolute top-4 right-4 bg-white rounded-lg shadow-md p-2 z-[1000]">
+    <div className="absolute top-4 right-4 bg-white rounded-lg shadow-md p-2 z-[2000]">
       <div className="space-y-2">
         <Button
           variant={activeLayers.includes('areas') ? 'primary' : 'outline'}

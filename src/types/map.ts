@@ -11,16 +11,28 @@ export interface MapConfig {
 export interface AreaReforestacion {
   id: string;
   nombre: string;
-  tipo: 'pendiente' | 'en_proceso' | 'completada';
+  tipo: 'completada' | 'en_proceso' | 'pendiente';
   poligono: {
     lat: number;
     lng: number;
   }[];
-  superficie: number; // en hectáreas
-  fechaInicio?: Date;
-  fechaFin?: Date;
+  superficie: number;
+  fechaInicio: string | null;
+  fechaFin?: string;
   progreso: number;
   semillasPlantadas: number;
+  tipoTerreno: string;
+  prioridad: string;
+  condicionesOptimas: {
+    temperatura: {
+      min: number;
+      max: number;
+    };
+    humedad: {
+      min: number;
+      max: number;
+    };
+  };
 }
 
 export interface MapLayer {
@@ -32,3 +44,18 @@ export interface MapLayer {
 }
 
 export type MapLayerId = 'areas' | 'drones' | 'semillas';
+
+export interface DrawnArea {
+  id: string;
+  type: 'polygon' | 'rectangle' | 'circle';
+  coordinates: any; // Coordenadas según el tipo
+  properties: {
+    name: string;
+    description?: string;
+    status: 'pendiente' | 'en_proceso' | 'completada';
+    area: number; // en hectáreas
+    perimeter?: number; // en metros
+    createdAt: Date;
+    updatedAt: Date;
+  }
+}

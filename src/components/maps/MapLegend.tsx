@@ -22,15 +22,34 @@ export default function MapLegend() {
         <div className="border-t border-gray-200 my-2" />
         
         <div className="flex items-center space-x-2">
-          <div className="w-4 h-4">
-            <img src="/icons/drone-active.svg" alt="Drone Activo" />
+          <div className="w-6 h-6 flex items-center justify-center">
+            <img 
+              src="/images/drones/drone-active.gif" 
+              alt="Drone Activo"
+              className="w-6 h-6"
+            />
           </div>
           <span className="text-sm">Drone Activo</span>
         </div>
         
         <div className="flex items-center space-x-2">
-          <div className="w-4 h-4">
-            <img src="/icons/drone-inactive.svg" alt="Drone Inactivo" />
+          <div className="w-6 h-6 flex items-center justify-center">
+            <img 
+              src="/images/drones/drone-maintenance.gif" 
+              alt="Drone en Mantenimiento"
+              className="w-6 h-6"
+            />
+          </div>
+          <span className="text-sm">Drone en Mantenimiento</span>
+        </div>
+
+        <div className="flex items-center space-x-2">
+          <div className="w-6 h-6 flex items-center justify-center">
+            <img 
+              src="/images/drones/drone-inactive.gif" 
+              alt="Drone Inactivo"
+              className="w-6 h-6"
+            />
           </div>
           <span className="text-sm">Drone Inactivo</span>
         </div>

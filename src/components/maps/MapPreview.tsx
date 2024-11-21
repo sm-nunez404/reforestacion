@@ -238,22 +238,27 @@ export default function MapPreview({
         <MapController />
         
         {/* Áreas de reforestación */}
-        {layers.areas && areas.map((area) => (
-          <Polygon
-            key={area.id}
-            positions={area.poligono.map(p => [p.lat, p.lng])}
-            pathOptions={{
-              color: getAreaColor(area.tipo),
-              fillColor: getAreaColor(area.tipo),
-              fillOpacity: 0.2,
-              weight: 2
-            }}
-          >
-            <Popup>
-              <div dangerouslySetInnerHTML={{ __html: createPopupContent(area).outerHTML }} />
-            </Popup>
-          </Polygon>
-        ))}
+        {layers.areas && areas.map((area) => {
+          // Verificar que el área tiene polígono válido antes de renderizar
+          if (!area.poligono || !Array.isArray(area.poligono)) return null;
+          
+          return (
+            <Polygon
+              key={area.id}
+              positions={area.poligono.map(p => [p.lat, p.lng])}
+              pathOptions={{
+                color: getAreaColor(area.tipo),
+                fillColor: getAreaColor(area.tipo),
+                fillOpacity: 0.2,
+                weight: 2
+              }}
+            >
+              <Popup>
+                <div dangerouslySetInnerHTML={{ __html: createPopupContent(area).outerHTML }} />
+              </Popup>
+            </Polygon>
+          );
+        })}
 
         {/* Drones */}
         {layers.drones && drones.map((drone) => (

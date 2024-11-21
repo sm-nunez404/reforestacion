@@ -21,6 +21,9 @@ import MapLayerControl from './MapLayerControl';
 // Coordenadas de Roboré, Bolivia
 const ROBORE_COORDS: [number, number] = [-18.3334, -59.7651];
 
+
+
+
 const createDroneIcon = (estado: string) => {
   const iconUrl = `/images/drones/${
     estado === 'activo' ? 'drone-active' :
@@ -29,7 +32,6 @@ const createDroneIcon = (estado: string) => {
   }.gif`;
   
   console.log('Loading drone icon:', iconUrl); // Para debug
-  
   return L.icon({
     iconUrl,
     iconSize: [32, 32],

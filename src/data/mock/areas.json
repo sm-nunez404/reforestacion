@@ -153,7 +153,7 @@
     },
     {
       "id": "rob-007",
-      "nombre": "Cerro San Miguel",
+      "nombre": "Cerro Daniel Cueto",
       "descripcion": "Área de alta prioridad por su valor paisajístico",
       "tipo": "pendiente",
       "progreso": 5,
@@ -227,6 +227,321 @@
         "humedad": {"min": 55, "max": 70},
         "tipoSuelo": ["Franco", "Arenoso"]
       }
+    },
+
+  {
+    "id": "rob-010",
+    "nombre": "Reserva Natural El Encanto",
+    "descripcion": "Área de conservación con biodiversidad única",
+    "tipo": "en_proceso",
+    "progreso": 50,
+    "superficie": 200,
+    "semillasPlantadas": 15000,
+    "poligono": [
+      {"lat": -18.1234, "lng": -59.7651},
+      {"lat": -18.1334, "lng": -59.7551},
+      {"lat": -18.1434, "lng": -59.7651}
+    ],
+    "especies": ["tajibo", "cuchi", "curupaú"],
+    "fechaInicio": "2023-01-10",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Bosque",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 20, "max": 30},
+      "humedad": {"min": 60, "max": 80},
+      "tipoSuelo": ["Franco", "Franco arenoso"]
     }
+  },
+  {
+    "id": "rob-011",
+    "nombre": "Parque Ecológico La Esperanza",
+    "descripcion": "Área de reforestación con especies nativas",
+    "tipo": "pendiente",
+    "progreso": 0,
+    "superficie": 300,
+    "semillasPlantadas": 0,
+    "poligono": [
+      {"lat": -18.2234, "lng": -59.7851},
+      {"lat": -18.2334, "lng": -59.7751},
+      {"lat": -18.2434, "lng": -59.7851},
+      {"lat": -18.2334, "lng": -59.7951},
+      {"lat": -18.2234, "lng": -59.8051}
+    ],
+    "especies": ["roble", "cedro", "tajibo"],
+    "fechaInicio": "2024-06-01",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Llanura",
+    "prioridad": "Media",
+    "condicionesOptimas": {
+      "temperatura": {"min": 22, "max": 32},
+      "humedad": {"min": 55, "max": 75},
+      "tipoSuelo": ["Arenoso", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-012",
+    "nombre": "Bosque de los Gigantes",
+    "descripcion": "Área de conservación de árboles centenarios",
+    "tipo": "completada",
+    "progreso": 100,
+    "superficie": 250,
+    "semillasPlantadas": 40000,
+    "poligono": [
+      {"lat": -18.3234, "lng": -59.8051},
+      {"lat": -18.3334, "lng": -59.7951},
+      {"lat": -18.3434, "lng": -59.8051},
+      {"lat": -18.3534, "lng": -59.8151},
+      {"lat": -18.3634, "lng": -59.8251}
+    ],
+    "especies": ["tajibo", "cuchi", "curupaú", "tipa"],
+    "fechaInicio": "2021-05-10",
+    "ultimaActualizacion": "2023-12-15",
+    "tipoTerreno": "Colina",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 21, "max": 31},
+      "humedad": {"min": 58, "max": 78},
+      "tipoSuelo": ["Franco", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-013",
+    "nombre": "Reserva Biológica El Manantial",
+    "descripcion": "Área de protección de fuentes de agua",
+    "tipo": "en_proceso",
+    "progreso": 70,
+    "superficie": 180,
+    "semillasPlantadas": 30000,
+    "poligono": [
+      {"lat": -18.1834, "lng": -59.7451},
+      {"lat": -18.1934, "lng": -59.7351},
+      {"lat": -18.2034, "lng": -59.7451},
+      {"lat": -18.2134, "lng": -59.7551},
+      {"lat": -18.2234, "lng": -59.7651},
+      {"lat": -18.2334, "lng": -59.7751}
+    ],
+    "especies": ["momoqui", "cedro", "jichituriqui"],
+    "fechaInicio": "2023-04-20",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Bosque seco",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 22, "max": 35},
+      "humedad": {"min": 50, "max": 75},
+      "tipoSuelo": ["Franco arenoso", "Arcilloso"]
+    }
+  },
+  {
+    "id": "rob-014",
+    "nombre": "Parque Nacional La Selva",
+    "descripcion": "Área de conservación de la selva tropical",
+    "tipo": "pendiente",
+    "progreso": 0,
+    "superficie": 400,
+    "semillasPlantadas": 0,
+    "poligono": [
+      {"lat": -18.2534, "lng": -59.8251},
+      {"lat": -18.2634, "lng": -59.8151},
+      {"lat": -18.2734, "lng": -59.8251},
+      {"lat": -18.2834, "lng": -59.8351},
+      {"lat": -18.2934, "lng": -59.8451},
+      {"lat": -18.3034, "lng": -59.8551},
+      {"lat": -18.3134, "lng": -59.8651}
+    ],
+    "especies": ["tajibo", "cuchi", "almendra chiquitana"],
+    "fechaInicio": "2023-09-15",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Llanura",
+    "prioridad": "Media",
+    "condicionesOptimas": {
+      "temperatura": {"min": 20, "max": 30},
+      "humedad": {"min": 60, "max": 80},
+      "tipoSuelo": ["Franco", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-015",
+    "nombre": "Reserva Natural El Edén",
+    "descripcion": "Área de conservación de flora y fauna",
+    "tipo": "completada",
+    "progreso": 100,
+    "superficie": 220,
+    "semillasPlantadas": 35000,
+    "poligono": [
+      {"lat": -18.1634, "lng": -59.8451},
+      {"lat": -18.1734, "lng": -59.8351},
+      {"lat": -18.1834, "lng": -59.8451},
+      {"lat": -18.1934, "lng": -59.8551},
+      {"lat": -18.2034, "lng": -59.8651},
+      {"lat": -18.2134, "lng": -59.8751},
+      {"lat": -18.2234, "lng": -59.8851},
+      {"lat": -18.2334, "lng": -59.8951}
+    ],
+    "especies": ["cedro", "roble", "tajibo", "tipa"],
+    "fechaInicio": "2022-01-10",
+    "ultimaActualizacion": "2023-11-30",
+    "tipoTerreno": "Bosque húmedo",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 22, "max": 32},
+      "humedad": {"min": 55, "max": 75},
+      "tipoSuelo": ["Franco", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-016",
+    "nombre": "Cerro Verde",
+    "descripcion": "Área de alta prioridad por su biodiversidad",
+    "tipo": "pendiente",
+    "progreso": 5,
+    "superficie": 250,
+    "semillasPlantadas": 2000,
+    "poligono": [
+      {"lat": -18.2934, "lng": -59.8651},
+      {"lat": -18.3034, "lng": -59.8551},
+      {"lat": -18.3134, "lng": -59.8651},
+      {"lat": -18.3234, "lng": -59.8751},
+      {"lat": -18.3334, "lng": -59.8851},
+      {"lat": -18.3434, "lng": -59.8951},
+      {"lat": -18.3534, "lng": -59.9051},
+      {"lat": -18.3634, "lng": -59.9151},
+      {"lat": -18.3734, "lng": -59.9251}
+    ],
+    "especies": ["tajibo", "cuchi", "curupaú"],
+    "fechaInicio": "2024-02-01",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Colina",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 20, "max": 30},
+      "humedad": {"min": 60, "max": 80},
+      "tipoSuelo": ["Franco", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-017",
+    "nombre": "Reserva Natural La Paz",
+    "descripcion": "Área de conservación de la paz y tranquilidad",
+    "tipo": "en_proceso",
+    "progreso": 60,
+    "superficie": 300,
+    "semillasPlantadas": 25000,
+    "poligono": [
+      {"lat": -18.1834, "lng": -59.7451},
+      {"lat": -18.1934, "lng": -59.7351},
+      {"lat": -18.2034, "lng": -59.7451},
+      {"lat": -18.2134, "lng": -59.7551},
+      {"lat": -18.2234, "lng": -59.7651},
+      {"lat": -18.2334, "lng": -59.7751},
+      {"lat": -18.2434, "lng": -59.7851},
+      {"lat": -18.2534, "lng": -59.7951},
+      {"lat": -18.2634, "lng": -59.8051},
+      {"lat": -18.2734, "lng": -59.8151}
+    ],
+    "especies": ["tajibo", "cuchi", "curupaú"],
+    "fechaInicio": "2023-01-10",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Bosque",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 20, "max": 30},
+      "humedad": {"min": 60, "max": 80},
+      "tipoSuelo": ["Franco", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-018",
+    "nombre": "Parque Ecológico La Vida",
+    "descripcion": "Área de reforestación con especies nativas",
+    "tipo": "pendiente",
+    "progreso": 0,
+    "superficie": 350,
+    "semillasPlantadas": 0,
+    "poligono": [
+      {"lat": -18.2234, "lng": -59.7851},
+      {"lat": -18.2334, "lng": -59.7751},
+      {"lat": -18.2434, "lng": -59.7851},
+      {"lat": -18.2534, "lng": -59.7951},
+      {"lat": -18.2634, "lng": -59.8051},
+      {"lat": -18.2734, "lng": -59.8151},
+      {"lat": -18.2834, "lng": -59.8251},
+      {"lat": -18.2934, "lng": -59.8351},
+      {"lat": -18.3034, "lng": -59.8451},
+      {"lat": -18.3134, "lng": -59.8551}
+    ],
+    "especies": ["roble", "cedro", "tajibo"],
+    "fechaInicio": "2024-06-01",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Llanura",
+    "prioridad": "Media",
+    "condicionesOptimas": {
+      "temperatura": {"min": 22, "max": 32},
+      "humedad": {"min": 55, "max": 75},
+      "tipoSuelo": ["Arenoso", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-019",
+    "nombre": "Bosque de la Esperanza",
+    "descripcion": "Área de conservación de árboles centenarios",
+    "tipo": "completada",
+    "progreso": 100,
+    "superficie": 270,
+    "semillasPlantadas": 45000,
+    "poligono": [
+      {"lat": -18.3234, "lng": -59.8051},
+      {"lat": -18.3334, "lng": -59.7951},
+      {"lat": -18.3434, "lng": -59.8051},
+      {"lat": -18.3534, "lng": -59.8151},
+      {"lat": -18.3634, "lng": -59.8251},
+      {"lat": -18.3734, "lng": -59.8351},
+      {"lat": -18.3834, "lng": -59.8451},
+      {"lat": -18.3934, "lng": -59.8551},
+      {"lat": -18.4034, "lng": -59.8651},
+      {"lat": -18.4134, "lng": -59.8751}
+    ],
+    "especies": ["tajibo", "cuchi", "curupaú", "tipa"],
+    "fechaInicio": "2021-05-10",
+    "ultimaActualizacion": "2023-12-15",
+    "tipoTerreno": "Colina",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 21, "max": 31},
+      "humedad": {"min": 58, "max": 78},
+      "tipoSuelo": ["Franco", "Franco arenoso"]
+    }
+  },
+  {
+    "id": "rob-020",
+    "nombre": "Reserva Biológica La Luz",
+    "descripcion": "Área de protección de fuentes de agua",
+    "tipo": "en_proceso",
+    "progreso": 80,
+    "superficie": 190,
+    "semillasPlantadas": 32000,
+    "poligono": [
+      {"lat": -18.1834, "lng": -59.7451},
+      {"lat": -18.1934, "lng": -59.7351},
+      {"lat": -18.2034, "lng": -59.7451},
+      {"lat": -18.2134, "lng": -59.7551},
+      {"lat": -18.2234, "lng": -59.7651},
+      {"lat": -18.2334, "lng": -59.7751},
+      {"lat": -18.2434, "lng": -59.7851},
+      {"lat": -18.2534, "lng": -59.7951},
+      {"lat": -18.2634, "lng": -59.8051},
+      {"lat": -18.2734, "lng": -59.8151}
+    ],
+    "especies": ["momoqui", "cedro", "jichituriqui"],
+    "fechaInicio": "2023-04-20",
+    "ultimaActualizacion": "2024-03-20",
+    "tipoTerreno": "Bosque seco",
+    "prioridad": "Alta",
+    "condicionesOptimas": {
+      "temperatura": {"min": 22, "max": 35},
+      "humedad": {"min": 50, "max": 75},
+      "tipoSuelo": ["Franco arenoso", "Arcilloso"]
+    }
+  }
   ]
 }

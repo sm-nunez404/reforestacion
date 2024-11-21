@@ -1,3 +1,4 @@
+
 {
   "areas": [
     {
@@ -173,6 +174,58 @@
         "temperatura": {"min": 20, "max": 30},
         "humedad": {"min": 60, "max": 80},
         "tipoSuelo": ["Franco", "Franco arenoso"]
+      }
+    },
+   
+
+ {
+      "id": "rob-008",
+      "nombre": "Nueva área afectada en Roboré",
+      "descripcion": "Zona crítica afectada por incendios forestales en 2024",
+      "tipo": "pendiente",
+      "progreso": 0,
+      "superficie": 300,
+      "semillasPlantadas": 0,
+      "poligono": [
+        {"lat": -18.1834, "lng": -59.7451},
+        {"lat": -18.1934, "lng": -59.7351},
+        {"lat": -18.2034, "lng": -59.7451},
+        {"lat": -18.1934, "lng": -59.7551}
+      ],
+      "especies": ["tajibo", "cuchi", "curupaú"],
+      "fechaInicio": "2024-04-01",
+      "ultimaActualizacion": "2024-11-21",
+      "tipoTerreno": "Bosque seco",
+      "prioridad": "Alta",
+      "condicionesOptimas": {
+        "temperatura": {"min": 21, "max": 35},
+        "humedad": {"min": 50, "max": 75},
+        "tipoSuelo": ["Franco arenoso", "Arcilloso"]
+      }
+    },
+    {
+      "id": "rob-009",
+      "nombre": "Bosque Seco Chiquitano Norte",
+      "descripcion": "Zona de recuperación prioritaria tras incendios forestales en 2024",
+      "tipo": "pendiente",
+      "progreso": 0,
+      "superficie": 400,
+      "semillasPlantadas": 0,
+      "poligono": [
+        {"lat": -16.1234, "lng": -60.7651},
+        {"lat": -16.1334, "lng": -60.7551},
+        {"lat": -16.1434, "lng": -60.7651},
+        {"lat": -16.1334, "lng": -60.7751}
+      ],
+      "especies": ["tajibo", "cedro", "curupaú"],
+      "fechaInicio": "2024-05-01",
+      "ultimaActualizacion": "2024-11-21",
+      "tipoTerreno": "Llanura",
+      "prioridad": "Media",
+      "condicionesOptimas": {
+        "temperatura": {"min": 20, "max": 32},
+        "humedad": {"min": 55, "max": 70},
+        "tipoSuelo": ["Franco", "Arenoso"]
       }
     }
   ]

@@ -28,7 +28,7 @@ const MAP_LAYER_INFO: Record<MapLayerType, { name: string; icon: React.Component
 
 export default function MapLayerControl({ currentLayer, onLayerChange }: MapLayerControlProps) {
   return (
-    <div className="absolute top-4 left-4 bg-white rounded-md shadow-md z-[1000]">
+    <div className="absolute bottom-4 right-4 bg-white rounded-md shadow-md z-[1000]">
       <div className="p-2 space-y-1">
         {(Object.entries(MAP_LAYER_NAMES) as [MapLayerType, string][]).map(([key, name]) => {
           const Icon = MAP_LAYER_INFO[key].icon;
@@ -36,7 +36,11 @@ export default function MapLayerControl({ currentLayer, onLayerChange }: MapLaye
             <button
               key={key}
               onClick={() => onLayerChange(key as MapLayerType)}
-              className="w-full px-3 py-1 text-sm rounded-md transition-colors flex items-center gap-2"
+              className={`w-full px-3 py-1 text-sm rounded-md transition-colors flex items-center gap-2
+                ${currentLayer === key 
+                  ? 'bg-blue-100 text-blue-700' 
+                  : 'hover:bg-gray-100'
+                }`}
             >
               <Icon size={16} />
               {MAP_LAYER_INFO[key].name}

@@ -16,7 +16,14 @@
       ],
       "especies": ["tajibo", "cuchi", "curupaú", "cedro"],
       "fechaInicio": "2022-03-15",
-      "ultimaActualizacion": "2024-03-20"
+      "ultimaActualizacion": "2024-03-20",
+      "tipoTerreno": "Montañoso",
+      "prioridad": "Alta",
+      "condicionesOptimas": {
+        "temperatura": {"min": 20, "max": 30},
+        "humedad": {"min": 60, "max": 80},
+        "tipoSuelo": ["Franco", "Franco arenoso"]
+      }
     },
     {
       "id": "rob-002",
@@ -34,7 +41,14 @@
       ],
       "especies": ["roble", "cedro", "tajibo"],
       "fechaInicio": "2024-06-01",
-      "ultimaActualizacion": "2024-03-20"
+      "ultimaActualizacion": "2024-03-20",
+      "tipoTerreno": "Llanura",
+      "prioridad": "Media",
+      "condicionesOptimas": {
+        "temperatura": {"min": 22, "max": 32},
+        "humedad": {"min": 55, "max": 75},
+        "tipoSuelo": ["Arenoso", "Franco arenoso"]
+      }
     },
     {
       "id": "rob-003",
@@ -52,7 +66,14 @@
       ],
       "especies": ["tajibo", "cuchi", "curupaú", "tipa"],
       "fechaInicio": "2021-05-10",
-      "ultimaActualizacion": "2023-12-15"
+      "ultimaActualizacion": "2023-12-15",
+      "tipoTerreno": "Colina",
+      "prioridad": "Alta",
+      "condicionesOptimas": {
+        "temperatura": {"min": 21, "max": 31},
+        "humedad": {"min": 58, "max": 78},
+        "tipoSuelo": ["Franco", "Franco arenoso"]
+      }
     },
     {
       "id": "rob-004",
@@ -70,7 +91,14 @@
       ],
       "especies": ["momoqui", "cedro", "jichituriqui"],
       "fechaInicio": "2023-04-20",
-      "ultimaActualizacion": "2024-03-20"
+      "ultimaActualizacion": "2024-03-20",
+      "tipoTerreno": "Bosque seco",
+      "prioridad": "Alta",
+      "condicionesOptimas": {
+        "temperatura": {"min": 22, "max": 35},
+        "humedad": {"min": 50, "max": 75},
+        "tipoSuelo": ["Franco arenoso", "Arcilloso"]
+      }
     },
     {
       "id": "rob-005",
@@ -88,7 +116,14 @@
       ],
       "especies": ["tajibo", "cuchi", "almendra chiquitana"],
       "fechaInicio": "2023-09-15",
-      "ultimaActualizacion": "2024-03-20"
+      "ultimaActualizacion": "2024-03-20",
+      "tipoTerreno": "Llanura",
+      "prioridad": "Media",
+      "condicionesOptimas": {
+        "temperatura": {"min": 20, "max": 30},
+        "humedad": {"min": 60, "max": 80},
+        "tipoSuelo": ["Franco", "Franco arenoso"]
+      }
     },
     {
       "id": "rob-006",
@@ -106,7 +141,14 @@
       ],
       "especies": ["cedro", "roble", "tajibo", "tipa"],
       "fechaInicio": "2022-01-10",
-      "ultimaActualizacion": "2023-11-30"
+      "ultimaActualizacion": "2023-11-30",
+      "tipoTerreno": "Bosque húmedo",
+      "prioridad": "Alta",
+      "condicionesOptimas": {
+        "temperatura": {"min": 22, "max": 32},
+        "humedad": {"min": 55, "max": 75},
+        "tipoSuelo": ["Franco", "Franco arenoso"]
+      }
     },
     {
       "id": "rob-007",
@@ -124,7 +166,14 @@
       ],
       "especies": ["tajibo", "cuchi", "curupaú"],
       "fechaInicio": "2024-02-01",
-      "ultimaActualizacion": "2024-03-20"
+      "ultimaActualizacion": "2024-03-20",
+      "tipoTerreno": "Colina",
+      "prioridad": "Alta",
+      "condicionesOptimas": {
+        "temperatura": {"min": 20, "max": 30},
+        "humedad": {"min": 60, "max": 80},
+        "tipoSuelo": ["Franco", "Franco arenoso"]
+      }
     }
   ]
 }

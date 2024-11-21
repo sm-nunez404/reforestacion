@@ -1,7 +1,7 @@
 'use client'
 
 import { Semilla } from '@/types/semillas';
-import { Leaf, Thermometer, Clock, Droplets, Tree, Shield, Sprout, Ruler } from 'lucide-react';
+import { Leaf, Thermometer, Clock, Droplets, Trees, Shield, Sprout, Ruler } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 

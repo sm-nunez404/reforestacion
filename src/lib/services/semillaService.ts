@@ -21,6 +21,28 @@ export const semillaService = {
               temperatura: { min: 20, max: 30 },
               humedad: { min: 60, max: 80 },
               tipoSuelo: ['Franco arenoso', 'Franco arcilloso']
+            },
+            origen: '',
+            usos: [],
+            fechaCosecha: '',
+            proveedor: '',
+            estadoConservacion: '',
+            metodoAlmacenamiento: '',
+            resistenciaPlagasEnfermedades: '',
+            requisitosRiego: '',
+            velocidadCrecimiento: '',
+            alturaMaxima: 0,
+            compatibilidadEcologica: '',
+            observacionesAdicionales: '',
+            epocaSiembra: {
+              inicio: '',
+              fin: ''
+            },
+            fechaRecoleccion: '',
+            fechaVencimiento: '',
+            imagenes: {
+              semilla: '',
+              planta: ''
             }
           },
           // Más semillas...
@@ -33,7 +55,7 @@ export const semillaService = {
     // Simular llamada a API
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve({
+        return resolve({
           id,
           nombre: 'Cedro rojo',
           especie: 'Cedrela odorata',
@@ -48,6 +70,28 @@ export const semillaService = {
             temperatura: { min: 20, max: 30 },
             humedad: { min: 60, max: 80 },
             tipoSuelo: ['Franco arenoso', 'Franco arcilloso']
+            },
+          origen: '',
+          usos: [],
+          fechaCosecha: '',
+          proveedor: '',
+          estadoConservacion: '',
+          metodoAlmacenamiento: '',
+          resistenciaPlagasEnfermedades: '',
+          requisitosRiego: '',
+          velocidadCrecimiento: '',
+          alturaMaxima: 0,
+          compatibilidadEcologica: '',
+          observacionesAdicionales: '',
+          epocaSiembra: {
+            inicio: '',
+            fin: ''
+          },
+          fechaRecoleccion: '',
+          fechaVencimiento: '',
+          imagenes: {
+            semilla: '',
+            planta: ''
           }
         });
       }, 500);

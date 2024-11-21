@@ -17,7 +17,7 @@ export default function StockForm({ semillaId, onSubmit, onCancel }: StockFormPr
     semillaId,
     tipo: 'entrada',
     cantidad: 0,
-    fecha: new Date(),
+    fecha: new Date().toISOString(),
     motivo: '',
     lote: '',
     proveedor: ''

@@ -11,7 +11,7 @@ export const stockService = {
             semillaId,
             tipo: 'entrada',
             cantidad: 1000,
-            fecha: new Date(),
+            fecha: new Date().toISOString(),
             motivo: 'Compra inicial',
             usuario: 'Juan Pérez',
             lote: 'LOT-001',

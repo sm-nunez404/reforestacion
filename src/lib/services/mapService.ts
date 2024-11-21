@@ -29,9 +29,21 @@ export const mapService = {
               { lat: -17.7763, lng: -63.1912 }
             ],
             superficie: 150,
-            fechaInicio: new Date('2024-01-15'),
+            fechaInicio: '2024-01-15',
             progreso: 65,
-            semillasPlantadas: 25000
+            semillasPlantadas: 25000,
+            tipoTerreno: '',
+            prioridad: '',
+            condicionesOptimas: {
+              temperatura: {
+                min: 0,
+                max: 0
+              },
+              humedad: {
+                min: 0,
+                max: 0
+              }
+            }
           },
           // Más áreas...
         ]);

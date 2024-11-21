@@ -21,7 +21,8 @@
         "tipo": "siembra",
         "progreso": 65,
         "inicio": "2024-02-20T12:00:00Z"
-      }
+      },
+      "ultimaActividad": "2024-02-20T14:30:00Z"
     },
     {
       "id": "DJI-002",
@@ -39,7 +40,8 @@
       "altitud": 0,
       "velocidad": 0,
       "areaAsignada": "Jardín Botánico",
-      "misionActual": null
+      "misionActual": null,
+      "ultimaActividad": "2024-02-20T14:15:00Z"
     },
     {
       "id": "DJI-003",
@@ -62,7 +64,8 @@
         "tipo": "reconocimiento",
         "progreso": 30,
         "inicio": "2024-02-20T13:45:00Z"
-      }
+      },
+      "ultimaActividad": "2024-02-20T14:28:00Z"
     }
   ],
   "stats": {

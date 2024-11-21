@@ -5,26 +5,21 @@ import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet-draw';
 import { Button } from '@/components/ui/Button';
-import { 
-  Ruler, 
-  Pencil,
-  Square,
-  Circle, 
-  Trash2
-} from 'lucide-react';
+import { Ruler, Pencil, Square, Circle, Trash2 } from 'lucide-react';
 import { v4 as uuidv4 } from 'uuid';
 import { DrawnArea } from '@/types/map';
 import AreaForm from './AreaForm';
 
-function MapToolbarContent() {
-  const map = useMap();
+interface MapToolbarProps {
+  onNewArea: (newArea: DrawnArea) => void;
+}
+
+function MapToolbarContent({ onNewArea }: MapToolbarProps) {
+  const map = useMap() as L.DrawMap; // Asegurarse de que el mapa sea del tipo correcto
   const [activeMode, setActiveMode] = useState<string | null>(null);
   const [drawnItems, setDrawnItems] = useState<L.FeatureGroup | null>(null);
   const [drawInstance, setDrawInstance] = useState<any>(null);
-  const [measurements, setMeasurements] = useState<{
-    distance: number;
-    area: number;
-  }>({ distance: 0, area: 0 });
+  const [measurements, setMeasurements] = useState<{ distance: number; area: number }>({ distance: 0, area: 0 });
   const [drawnAreas, setDrawnAreas] = useState<DrawnArea[]>([]);
   const [showAreaForm, setShowAreaForm] = useState(false);
   const [tempLayer, setTempLayer] = useState<L.Layer | null>(null);
@@ -32,30 +27,27 @@ function MapToolbarContent() {
   useEffect(() => {
     if (!map) return;
 
-    // Crear un FeatureGroup para almacenar todas las capas dibujadas
     const newDrawnItems = new L.FeatureGroup();
     map.addLayer(newDrawnItems);
     setDrawnItems(newDrawnItems);
 
-    // Configurar los eventos de dibujo
     map.on(L.Draw.Event.CREATED, (e: any) => {
       const layer = e.layer;
       setTempLayer(layer);
       setShowAreaForm(true);
-      
+
       if (e.layerType === 'polygon' || e.layerType === 'rectangle') {
-        const area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]);
-        setMeasurements(prev => ({ ...prev, area: area / 10000 }));
+        const area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0] as L.LatLngLiteral[]) / 10000;
+        setMeasurements(prev => ({ ...prev, area }));
       } else if (e.layerType === 'polyline') {
         const distance = layer.getDistance();
         setMeasurements(prev => ({ ...prev, distance: distance / 1000 }));
       } else if (e.layerType === 'circle') {
         const radius = layer.getRadius();
-        const area = Math.PI * Math.pow(radius, 2);
-        setMeasurements(prev => ({ ...prev, area: area / 10000 }));
+        const area = Math.PI * Math.pow(radius, 2) / 10000;
+        setMeasurements(prev => ({ ...prev, area }));
       }
-      
-      // Desactivar el modo activo después de completar el dibujo
+
       setActiveMode(null);
       if (drawInstance) {
         drawInstance.disable();
@@ -72,7 +64,6 @@ function MapToolbarContent() {
   }, [map]);
 
   const handleModeChange = (mode: string) => {
-    // Si hay una instancia activa, desactivarla
     if (drawInstance) {
       drawInstance.disable();
     }
@@ -108,10 +99,7 @@ function MapToolbarContent() {
           },
           showArea: true,
           metric: true,
-          guidelineDistance: 10,
-          snapDistance: 20,
-          touchRadius: 20,
-          completionRadius: 20
+          guidelineDistance: 10
         });
         break;
       case 'rectangle':
@@ -159,7 +147,7 @@ function MapToolbarContent() {
 
   const calculateArea = (layer: L.Layer) => {
     if (layer instanceof L.Polygon) {
-      return L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]) / 10000;
+      return L.GeometryUtil.geodesicArea(layer.getLatLngs()[0] as L.LatLngLiteral[]) / 10000;
     }
     if (layer instanceof L.Circle) {
       return Math.PI * Math.pow(layer.getRadius(), 2) / 10000;
@@ -169,10 +157,10 @@ function MapToolbarContent() {
 
   const calculatePerimeter = (layer: L.Layer) => {
     if (layer instanceof L.Polygon) {
-      const latlngs = layer.getLatLngs()[0];
+      const latlngs = layer.getLatLngs()[0] as L.LatLngLiteral[];
       let perimeter = 0;
       for (let i = 0; i < latlngs.length - 1; i++) {
-        perimeter += latlngs[i].distanceTo(latlngs[i + 1]);
+        perimeter += L.latLng(latlngs[i]).distanceTo(L.latLng(latlngs[i + 1]));
       }
       return perimeter;
     }
@@ -274,7 +262,7 @@ function MapToolbarContent() {
     const status = formData.status || 'pendiente';
     const areaColor = getAreaColor(status);
 
-    tempLayer.setStyle({
+    (tempLayer as L.Path).setStyle({
       color: areaColor,
       fillColor: areaColor,
       fillOpacity: 0.2,
@@ -285,11 +273,11 @@ function MapToolbarContent() {
       id: uuidv4(),
       type: tempLayer instanceof L.Polygon ? 'polygon' : 
             tempLayer instanceof L.Rectangle ? 'rectangle' : 'circle',
-      coordinates: tempLayer instanceof L.Polygon ? tempLayer.getLatLngs() :
+      coordinates: tempLayer instanceof L.Polygon ? (tempLayer.getLatLngs() as L.LatLngLiteral[][]) :
                   tempLayer instanceof L.Circle ? {
                     center: tempLayer.getLatLng(),
                     radius: tempLayer.getRadius()
-                  } : tempLayer.getLatLngs(),
+                  } : (tempLayer as L.Polygon).getLatLngs() as L.LatLngLiteral[],
       properties: {
         name: formData.name || 'Área sin nombre',
         description: formData.description,
@@ -304,23 +292,18 @@ function MapToolbarContent() {
     };
 
     setDrawnAreas(prev => [...prev, newArea]);
+    onNewArea(newArea); // Llamar a onNewArea con el área nueva
     
     if (drawnItems && tempLayer) {
-      // Crear y vincular el popup
-      const popup = L.popup()
-        .setContent(createPopupContent(newArea));
-      
+      const popup = L.popup().setContent(createPopupContent(newArea));
       tempLayer.bindPopup(popup);
       drawnItems.addLayer(tempLayer);
-      
-      // Abrir el popup inmediatamente
       tempLayer.openPopup();
-      
-      // Centrar el mapa en el área dibujada
-      map.fitBounds(tempLayer.getBounds());
+      if (tempLayer instanceof L.Polygon || tempLayer instanceof L.Rectangle) {
+        map.fitBounds(tempLayer.getBounds());
+      }
     }
 
-    // Mostrar notificación de éxito
     const notification = document.createElement('div');
     notification.className = 'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-[9999]';
     notification.textContent = 'Área guardada correctamente';
@@ -414,6 +397,8 @@ function MapToolbarContent() {
   );
 }
 
-export default function MapToolbar() {
-  return <MapToolbarContent />;
+function MapToolbar({ onNewArea }: MapToolbarProps) {
+  return <MapToolbarContent onNewArea={onNewArea} />;
 }
+
+export default MapToolbar;

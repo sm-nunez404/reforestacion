@@ -32,7 +32,12 @@
       "velocidadCrecimiento": "Rápido",
       "alturaMaxima": 15,
       "compatibilidadEcologica": "Buena con especies nativas",
-      "observacionesAdicionales": "Atrae polinizadores"
+      "observacionesAdicionales": "Atrae polinizadores",
+      "epocaSiembra": {
+        "inicio": "Primavera",
+        "fin": "Verano"
+      },
+      "fechaRecoleccion": "2023-04-01"
     },
     {
       "id": "S002",
@@ -66,7 +71,12 @@
       "velocidadCrecimiento": "Lento",
       "alturaMaxima": 10,
       "compatibilidadEcologica": "Fijadora de nitrógeno",
-      "observacionesAdicionales": "Madera de alta densidad"
+      "observacionesAdicionales": "Madera de alta densidad",
+      "epocaSiembra": {
+        "inicio": "Primavera",
+        "fin": "Verano"
+      },
+      "fechaRecoleccion": "2023-04-01"
     },
     {
       "id": "S003",
@@ -87,6 +97,11 @@
       "origen": "Local",
       "usos": ["Ornamental", "Reforestación"],
       "fechaCosecha": "2024-09-10",
+      "fechaVencimiento": "2025-09-10",
+      "imagenes": {
+        "semilla": "/images/semillas/toborochi-semilla.jpg",
+        "planta": "/images/semillas/toborochi-planta.jpg"
+      },
       "proveedor": "Asociación de Silvicultores",
       "estadoConservacion": "Tratadas",
       "metodoAlmacenamiento": "Secado y refrigeración",
@@ -95,7 +110,12 @@
       "velocidadCrecimiento": "Moderado",
       "alturaMaxima": 18,
       "compatibilidadEcologica": "Proporciona hábitat para aves",
-      "observacionesAdicionales": "Flores atractivas para fauna"
+      "observacionesAdicionales": "Flores atractivas para fauna",
+      "epocaSiembra": {
+        "inicio": "Primavera",
+        "fin": "Verano"
+      },
+      "fechaRecoleccion": "2023-04-01"
     },
     {
       "id": "S004",
@@ -116,6 +136,11 @@
       "origen": "Local",
       "usos": ["Madera", "Reforestación"],
       "fechaCosecha": "2024-07-30",
+      "fechaVencimiento": "2025-07-30",
+      "imagenes": {
+        "semilla": "/images/semillas/soto-semilla.jpg",
+        "planta": "/images/semillas/soto-planta.jpg"
+      },
       "proveedor": "Fundación Bosque Nativo",
       "estadoConservacion": "Frescas",
       "metodoAlmacenamiento": "Ambiente seco",
@@ -124,7 +149,12 @@
       "velocidadCrecimiento": "Lento",
       "alturaMaxima": 20,
       "compatibilidadEcologica": "Soporta suelos pobres",
-      "observacionesAdicionales": "Madera resistente a la intemperie"
+      "observacionesAdicionales": "Madera resistente a la intemperie",
+      "epocaSiembra": {
+        "inicio": "Primavera",
+        "fin": "Verano"
+      },
+      "fechaRecoleccion": "2023-04-01"
     }
   ],
   "stats": {

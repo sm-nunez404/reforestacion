@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react';
+import { useMapEvents } from 'react-leaflet';
 import { MapContainer, TileLayer, Marker, Popup, useMap, Polygon } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { useMap as useMapStore } from '@/lib/hooks/useMap';
@@ -13,6 +14,8 @@ import L from 'leaflet';
 import { useStore } from '../../lib/store/store';
 import areasData from '@/data/mock/areas.json';
 import { useLocalStorage } from '@/lib/hooks/useLocalStorage';
+import { Drone } from '@/types/drones';
+
 
 // Coordenadas de Roboré, Bolivia
 const ROBORE_COORDS: [number, number] = [-18.3334, -59.7651];
@@ -138,6 +141,18 @@ interface MapPreviewProps {
   zoom?: number
 }
 
+function MapClickHandler({ onMapClick }: { onMapClick: (e: L.LeafletMouseEvent) => void }) {
+  useMapEvents({
+    click: onMapClick
+  });
+  return null;
+}
+
+export interface MisionActual {
+  tipo: string;
+  progreso: number;
+}
+
 export default function MapPreview({ 
   center = ROBORE_COORDS,
   zoom = 13 
@@ -213,10 +228,8 @@ export default function MapPreview({
         zoom={zoom}
         style={{ height: '100%', width: '100%' }}
         zoomControl={false}
-        eventHandlers={{
-          click: handleMapClick
-        }}
       >
+        <MapClickHandler onMapClick={handleMapClick} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

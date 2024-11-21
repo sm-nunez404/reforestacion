@@ -6,6 +6,8 @@ export interface StockMovement {
   motivo: string;
   fecha: string;
   usuario: string;
+  lote?: string; // Añadir esta línea
+  proveedor?: string; // Añadir esta línea
 }
 
 export interface StockSummary {

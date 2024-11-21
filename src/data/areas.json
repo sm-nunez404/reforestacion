@@ -1,0 +1,50 @@
+{
+    "areas": [
+      {
+        "id": "A001",
+        "nombre": "Área 1",
+        "descripcion": "Descripción del área 1",
+        "tipo": "Reforestación",
+        "progreso": 50,
+        "superficie": 100,
+        "semillasPlantadas": 5000,
+        "poligono": [
+          { "lat": -17.7863, "lng": -63.1812 },
+          { "lat": -17.7865, "lng": -63.1815 }
+        ],
+        "especies": ["Jacarandá", "Lapacho"],
+        "fechaInicio": "2023-01-01",
+        "ultimaActualizacion": "2023-06-01",
+        "tipoTerreno": "Montañoso",
+        "prioridad": "Alta",
+        "condicionesOptimas": {
+          "temperatura": { "min": 20, "max": 30 },
+          "humedad": { "min": 60, "max": 80 },
+          "tipoSuelo": ["Franco", "Franco arenoso"]
+        }
+      },
+      {
+        "id": "A002",
+        "nombre": "Área 2",
+        "descripcion": "Descripción del área 2",
+        "tipo": "Reforestación",
+        "progreso": 75,
+        "superficie": 150,
+        "semillasPlantadas": 7500,
+        "poligono": [
+          { "lat": -17.7867, "lng": -63.1817 },
+          { "lat": -17.7869, "lng": -63.1820 }
+        ],
+        "especies": ["Tajibo", "Soto"],
+        "fechaInicio": "2023-02-01",
+        "ultimaActualizacion": "2023-07-01",
+        "tipoTerreno": "Llanura",
+        "prioridad": "Media",
+        "condicionesOptimas": {
+          "temperatura": { "min": 22, "max": 32 },
+          "humedad": { "min": 55, "max": 75 },
+          "tipoSuelo": ["Arenoso", "Franco arenoso"]
+        }
+      }
+    ]
+  }

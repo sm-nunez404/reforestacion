@@ -16,8 +16,6 @@ import areasData from '@/data/mock/areas.json';
 import { useLocalStorage } from '@/lib/hooks/useLocalStorage';
 import { Drone } from '@/types/drones';
 
-
-// Coordenadas de Roboré, Bolivia
 const ROBORE_COORDS: [number, number] = [-18.3334, -59.7651];
 
 const createDroneIcon = (estado: string) => {
@@ -63,11 +61,9 @@ const createPopupContent = (area: any) => {
     });
   };
 
-  // Crear un elemento div para el popup
   const container = document.createElement('div');
   container.className = 'p-4 min-w-[300px]';
   
-  // Establecer el contenido HTML
   container.innerHTML = `
     <h3 class="font-semibold text-lg mb-2">${area.nombre}</h3>
     ${area.descripcion ? 
@@ -107,11 +103,11 @@ const createPopupContent = (area: any) => {
           <div>
             <span class="font-medium text-sm text-gray-500">Estado</span>
             <span class="ml-2 px-2 py-1 text-xs font-medium rounded-full ${
-              area.tipo === 'completada' ? 'bg-green-100 text-green-800' :
+              area.tipo ? (area.tipo === 'completada' ? 'bg-green-100 text-green-800' :
               area.tipo === 'en_proceso' ? 'bg-yellow-100 text-yellow-800' :
-              'bg-red-100 text-red-800'
+              'bg-red-100 text-red-800') : ''
             }">
-              ${area.tipo.replace('_', ' ')}
+              ${area.tipo ? area.tipo.replace('_', ' ') : ''}
             </span>
           </div>
           <div class="text-sm text-gray-500">
@@ -170,11 +166,10 @@ export default function MapPreview({
     }
   };
 
-  // Función mejorada para guardar nuevas áreas
   const handleNewArea = (newArea: any) => {
     const areaToSave = {
       ...newArea,
-      id: `area-${Date.now()}`, // Generar ID único
+      id: `area-${Date.now()}`,
       fechaInicio: new Date().toISOString(),
       ultimaActualizacion: new Date().toISOString(),
       progreso: newArea.progreso || 0,
@@ -184,7 +179,6 @@ export default function MapPreview({
 
     setAreas(prev => [...prev, areaToSave]);
 
-    // Mostrar notificación de éxito
     const notification = document.createElement('div');
     notification.className = 
       'fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg z-[9999]';
@@ -196,7 +190,6 @@ export default function MapPreview({
     }, 3000);
   };
 
-  // Función para actualizar un área existente
   const handleUpdateArea = (areaId: string, updates: Partial<typeof areas[0]>) => {
     setAreas(prev => prev.map(area => 
       area.id === areaId 
@@ -209,12 +202,10 @@ export default function MapPreview({
     ));
   };
 
-  // Función para eliminar un área
   const handleDeleteArea = (areaId: string) => {
     setAreas(prev => prev.filter(area => area.id !== areaId));
   };
 
-  // Función para resetear a los datos originales
   const handleResetAreas = () => {
     if (window.confirm('¿Estás seguro de que quieres restaurar las áreas originales? Se perderán todas las modificaciones.')) {
       setAreas(areasData.areas);
@@ -237,11 +228,10 @@ export default function MapPreview({
         
         <MapController />
         
-        {/* Áreas de reforestación */}
         {layers.areas && areas.map((area) => (
           <Polygon
             key={area.id}
-            positions={area.poligono.map(p => [p.lat, p.lng])}
+            positions={area.poligono ? area.poligono.map(p => [p.lat, p.lng]) : []}
             pathOptions={{
               color: getAreaColor(area.tipo),
               fillColor: getAreaColor(area.tipo),
@@ -255,7 +245,6 @@ export default function MapPreview({
           </Polygon>
         ))}
 
-        {/* Drones */}
         {layers.drones && drones.map((drone) => (
           <Marker
             key={drone.id}
@@ -282,7 +271,6 @@ export default function MapPreview({
           </Marker>
         ))}
 
-        {/* Ruta de misión */}
         {missionPath.length > 0 && (
           <FlightPath 
             coordinates={missionPath}
@@ -308,7 +296,6 @@ export default function MapPreview({
         </div>
       )}
 
-      {/* Añadir botón de reset si lo deseas */}
       <button
         onClick={handleResetAreas}
         className="absolute top-4 right-4 bg-white px-3 py-1 rounded-md shadow-md text-sm z-[1000]"

@@ -35,7 +35,8 @@ const convertDroneDates = (drones: any[]): Drone[] => {
 };
 
 export const useMap = create<MapState>((set) => ({
-  center: [-17.7863, -63.1812], // Santa Cruz coordinates
+  center: [-18.3323, -59.7591], // Roboré coordinates
+  
   zoom: 13,
   areas: areasData.areas,
   drones: convertDroneDates(dronesData.drones),

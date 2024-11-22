@@ -15,8 +15,14 @@ import { useStore } from '../../lib/store/store';
 import areasData from '@/data/mock/areas.json';
 import { useLocalStorage } from '@/lib/hooks/useLocalStorage';
 import { Drone } from '@/types/drones';
+import MapLayerControl from './MapLayerControl';
 
+
+// Coordenadas de Roboré, Bolivia
 const ROBORE_COORDS: [number, number] = [-18.3334, -59.7651];
+
+
+
 
 const createDroneIcon = (estado: string) => {
   const iconUrl = `/images/drones/${
@@ -26,7 +32,6 @@ const createDroneIcon = (estado: string) => {
   }.gif`;
   
   console.log('Loading drone icon:', iconUrl); // Para debug
-  
   return L.icon({
     iconUrl,
     iconSize: [32, 32],
@@ -149,6 +154,25 @@ export interface MisionActual {
   progreso: number;
 }
 
+// Modifica la definición del tipo para incluir 'satellite2'
+type MapLayerType = 'default' | 'satellite' | 'satellite2' | 'terrain';
+
+// Asegúrate de exportar el tipo si se usa en otros componentes
+export type { MapLayerType };
+
+const MAP_LAYERS: Record<MapLayerType, string> = {
+  default: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  satellite: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  satellite2: "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+  terrain: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+};
+
+const MAP_ATTRIBUTIONS = {
+  default: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  satellite: '&copy; <a href="https://www.esri.com">Esri</a>',
+  terrain: '&copy; <a href="https://opentopomap.org">OpenTopoMap</a> contributors'
+};
+
 export default function MapPreview({ 
   center = ROBORE_COORDS,
   zoom = 13 
@@ -159,6 +183,9 @@ export default function MapPreview({
   const { setSelectedDrone } = useStore();
   
   const [areas, setAreas] = useLocalStorage('reforestation-areas', areasData.areas);
+  const [currentLayer, setCurrentLayer] = useState<MapLayerType>(() => {
+    return (localStorage.getItem('preferred-map-layer') || 'default') as MapLayerType;
+  });
 
   const handleMapClick = (e: L.LeafletMouseEvent) => {
     if (isPlanning) {
@@ -212,6 +239,11 @@ export default function MapPreview({
     }
   };
 
+  const handleLayerChange = (layer: string) => {
+    setCurrentLayer(layer as MapLayerType);
+    localStorage.setItem('preferred-map-layer', layer);
+  };
+
   return (
     <div className="relative h-[calc(100vh-4rem)] w-full">
       <MapContainer
@@ -222,28 +254,37 @@ export default function MapPreview({
       >
         <MapClickHandler onMapClick={handleMapClick} />
         <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url={MAP_LAYERS[currentLayer as keyof typeof MAP_LAYERS]}
+          attribution={MAP_ATTRIBUTIONS[currentLayer as keyof typeof MAP_ATTRIBUTIONS]}
+          maxZoom={19}
+          tileSize={256}
+          className="transition-opacity duration-200"
         />
         
         <MapController />
         
-        {layers.areas && areas.map((area) => (
-          <Polygon
-            key={area.id}
-            positions={area.poligono ? area.poligono.map(p => [p.lat, p.lng]) : []}
-            pathOptions={{
-              color: getAreaColor(area.tipo),
-              fillColor: getAreaColor(area.tipo),
-              fillOpacity: 0.2,
-              weight: 2
-            }}
-          >
-            <Popup>
-              <div dangerouslySetInnerHTML={{ __html: createPopupContent(area).outerHTML }} />
-            </Popup>
-          </Polygon>
-        ))}
+        {/* Áreas de reforestación */}
+        {layers.areas && areas.map((area) => {
+          // Verificar que el área tiene polígono válido antes de renderizar
+          if (!area.poligono || !Array.isArray(area.poligono)) return null;
+          
+          return (
+            <Polygon
+              key={area.id}
+              positions={area.poligono.map(p => [p.lat, p.lng])}
+              pathOptions={{
+                color: getAreaColor(area.tipo),
+                fillColor: getAreaColor(area.tipo),
+                fillOpacity: 0.2,
+                weight: 2
+              }}
+            >
+              <Popup>
+                <div dangerouslySetInnerHTML={{ __html: createPopupContent(area).outerHTML }} />
+              </Popup>
+            </Polygon>
+          );
+        })}
 
         {layers.drones && drones.map((drone) => (
           <Marker
@@ -283,6 +324,10 @@ export default function MapPreview({
 
       <MapControls onLayerToggle={toggleLayer} />
       <MapLegend />
+      <MapLayerControl 
+        currentLayer={currentLayer}
+        onLayerChange={handleLayerChange}
+      />
       
       {isPlanning && (
         <div className="absolute bottom-4 left-4 right-4 z-[1000]">

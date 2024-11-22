@@ -2,11 +2,12 @@ import { MapConfig, AreaReforestacion, MapLayer } from '@/types/map';
 
 export const mapService = {
   async getMapConfig(): Promise<MapConfig> {
+    
     // Configuración inicial del mapa centrada en Santa Cruz, Bolivia
     return {
       center: {
-        lat: -17.7863,
-        lng: -63.1812
+        lat: -18.3323,
+        lng: -59.7591
       },
       zoom: 12,
       minZoom: 8,

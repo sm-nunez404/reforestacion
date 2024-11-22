@@ -1,0 +1,10 @@
+torch>=2.0.0
+torchvision>=0.15.0
+ultralytics>=8.3.35
+opencv-python>=4.8.0
+numpy>=1.24.0
+Pillow>=10.0.0
+python-dotenv>=1.0.0
+tensorboard>=2.16.2
+roboflow>=1.1.49
+pycocotools>=2.0.8

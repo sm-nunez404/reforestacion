@@ -39,3 +39,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Next.js
+.next/
+node_modules/
+.env
+.env.local
+
+# Archivos temporales
+public/temp/*
+!public/temp/.gitkeep
+
+# Modelos
+public/models/*
+!public/models/.gitkeep
+
+# Resultados de YOLO
+runs/

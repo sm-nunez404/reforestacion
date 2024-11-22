@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { Home, Map, Leaf, Plane, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Home, Map, Leaf, Plane, ChevronLeft, ChevronRight, Brain } from 'lucide-react'
 import { useState } from 'react'
 
 export default function Sidebar() {
@@ -10,7 +10,12 @@ export default function Sidebar() {
     { href: '/dashboard', icon: Home, label: 'Inicio' },
     { href: '/mapa', icon: Map, label: 'Mapa' },
     { href: '/semillas', icon: Leaf, label: 'Semillas' },
-    { href: '/drones', icon: Plane, label: 'Drones' }
+    { href: '/drones', icon: Plane, label: 'Drones' },
+    {
+      icon: Brain,
+      label: 'Análisis IA',
+      href: '/analisis'
+    }
   ]
 
   return (

@@ -1,0 +1,24 @@
+{
+    "models": [
+      {
+        "id": "terrain-classifier",
+        "name": "Clasificador de Terreno",
+        "type": "classification",
+        "description": "Modelo para clasificar tipos de terreno en 10 categorías",
+        "inputSize": [224, 224],
+        "numClasses": 10,
+        "framework": "keras",
+        "version": "1.0.0"
+      },
+      {
+        "id": "land-segmenter",
+        "name": "Segmentador de Tierra",
+        "type": "segmentation",
+        "description": "Modelo para segmentación de uso de suelo en 19 categorías",
+        "inputSize": [512, 512],
+        "numClasses": 19,
+        "framework": "pytorch",
+        "version": "1.0.0"
+      }
+    ]
+  }

@@ -2,12 +2,7 @@
 
 import { useEffect } from 'react';
 
-// Extend the Map type to include the pm property
-declare module 'leaflet' {
-  interface Map {
-    pm: any;
-  }
-}
+
 import { useMap } from 'react-leaflet';
 import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';

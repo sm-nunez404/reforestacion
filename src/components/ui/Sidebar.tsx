@@ -20,10 +20,10 @@ export default function Sidebar() {
   ]
 
   return (
-    <div>
+    <div className="relative">
       <button
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="absolute top-3 right-3 md:hidden bg-white border rounded-full p-1.5 hover:bg-gray-100"
+        className="absolute top-3 right-3 md:hidden bg-white border rounded-full p-1.5 hover:bg-gray-100 z-50"
       >
         <Menu className="w-6 h-6" />
       </button>

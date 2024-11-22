@@ -85,7 +85,7 @@ export default function AIAnalysisPanel() {
               1. Selecciona un modelo
             </h3>
             <ModelSelector
-              models={modelsData.models}
+              models={modelsData.models as AIModel[]}
               selectedModel={selectedModel || undefined}
               onModelSelect={handleModelSelect}
             />
